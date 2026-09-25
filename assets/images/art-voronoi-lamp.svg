@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="portfolio-svg">
+  <defs>
+    <linearGradient id="warmLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFA84A" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF5500" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF7700" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="#0C0E12"/>
+  
+  <!-- Ambient Internal Glow -->
+  <circle cx="200" cy="150" r="100" fill="url(#lampGlow)"/>
+  
+  <!-- Voronoi Vessel Silhouette -->
+  <g transform="translate(0, -5)">
+    <!-- Base stand -->
+    <ellipse cx="200" cy="245" rx="55" ry="12" fill="#161B22" stroke="#374151" stroke-width="1.5"/>
+    
+    <!-- Outer Contour -->
+    <path d="M 160,70 Q 120,140 145,210 Q 160,240 200,240 Q 240,240 255,210 Q 280,140 240,70 Q 200,60 160,70 Z" fill="#151921" stroke="#FF6B1A" stroke-width="1.8"/>
+    
+    <!-- Internal Light Core -->
+    <cylinder>
+      <line x1="200" y1="80" x2="200" y2="230" stroke="#FFF3D6" stroke-width="6" stroke-linecap="round"/>
+    </cylinder>
+    
+    <!-- Voronoi Cutout Cells -->
+    <polygon points="180,90 195,85 205,95 195,110 180,105" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="215,90 230,95 235,115 220,120 208,105" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="160,110 175,108 180,128 165,140 150,125" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="185,120 210,115 215,140 195,150 178,135" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.5"/>
+    <polygon points="225,125 245,130 250,155 230,160 218,142" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="150,150 170,145 175,175 155,185 140,165" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="182,155 212,150 215,180 192,192 178,175" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.5"/>
+    <polygon points="220,165 245,165 248,195 228,200 215,185" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="165,190 185,185 192,215 175,225 160,205" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+    <polygon points="198,198 220,192 225,220 205,228 192,215" fill="url(#warmLight)" stroke="#FF9E42" stroke-width="1.2"/>
+  </g>
+  
+  <text x="25" y="40" fill="#6A778B" font-family="monospace" font-size="11">MATTE PLA / SPIRAL VASE MODE</text>
+  <line x1="25" y1="46" x2="200" y2="46" stroke="#FF6B1A" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="375" y="275" fill="#FFA84A" font-family="monospace" font-size="11" text-anchor="end">PRINT TIME: 6h 12m</text>
+</svg>

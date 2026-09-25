@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Wizard | Precision Custom 3D Printing & Prototyping</title>
+  <meta name="description" content="Boutique custom 3D printing and rapid prototyping. High-accuracy FDM and 8K SLA resin parts engineered for makers, designers, and industrial applications.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambient Textures (Procedural 3D Print Layer Lines & Grid) -->
+  <div class="bg-layer-grid" aria-hidden="true"></div>
+  <div class="bg-contour-lines" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="3D Wizard Homepage">
+        <div class="logo-icon">
+          <div class="logo-cube"></div>
+          <div class="logo-dot"></div>
+        </div>
+        <div class="brand-text">
+          <span>3D</span><span class="brand-accent">WIZARD</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#gallery" class="nav-link">Portfolio</a></li>
+          <li><a href="#process" class="nav-link">How It Works</a></li>
+          <li><a href="#materials" class="nav-link">Materials & Specs</a></li>
+          <li><a href="#order" class="nav-link">Instant Quote</a></li>
+          <li><a href="#contact" class="nav-link">Workshop</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <a href="#order" class="btn btn-primary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Upload Design
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#gallery" class="mobile-nav-link">Portfolio & Past Prints</a>
+    <a href="#process" class="mobile-nav-link">How It Works</a>
+    <a href="#materials" class="mobile-nav-link">Materials & Engineering Specs</a>
+    <a href="#order" class="mobile-nav-link">Instant Quote & Upload</a>
+    <a href="#contact" class="mobile-nav-link">Location & Workshop</a>
+    <a href="#order" class="btn btn-primary btn-lg" style="margin-top: 1rem;">Upload Your STL File</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Left Content -->
+        <div class="hero-content">
+          <div class="hero-badge-row">
+            <div class="telemetry-pulse">
+              <span class="pulse-dot"></span>
+              <span class="mono-tag">LAB ACTIVE &bull; 24H DISPATCH AVAILABLE</span>
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            Custom 3D Printing, <br/>
+            <span class="text-gradient-orange">Done Right.</span>
+          </h1>
+
+          <p class="hero-subheadline">
+            Boutique additive manufacturing for engineers, designers, and visionaries. Micron-precision FDM and 8K SLA resin fabrication with instant turnaround and transparent pricing.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#order" class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Upload Your Design
+            </a>
+            <a href="#gallery" class="btn btn-secondary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              View Our Work
+            </a>
+          </div>
+
+          <!-- Quick Specs Strip -->
+          <div class="hero-specs-strip">
+            <div class="stat-item">
+              <div class="stat-val">0.05<span>mm</span></div>
+              <div class="stat-lbl">Min Layer Res</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">24-48<span>h</span></div>
+              <div class="stat-lbl">Rapid Turnaround</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">12<span>+</span></div>
+              <div class="stat-lbl">Active Materials</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">100<span>%</span></div>
+              <div class="stat-lbl">QC Verified</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive 3D Slicer Simulator Widget -->
+        <div class="hero-visual">
+          <div class="slicer-card">
+            <div class="slicer-header">
+              <div class="slicer-status">
+                <span class="status-indicator"></span>
+                <span>ONLINE SLICER PREVIEW</span>
+              </div>
+              <div class="slicer-controls-bar">
+                <button class="slicer-btn active" id="btnSlicerWireframe" title="Toggle Layer Slices">Layers</button>
+                <button class="slicer-btn" id="btnSlicerSolid" title="Solid Mode">Solid</button>
+                <button class="slicer-btn" id="btnSlicerReset" title="Reset Camera">Reset</button>
+              </div>
+            </div>
+
+            <div class="slicer-viewport" id="slicerViewport">
+              <canvas id="slicerCanvas"></canvas>
+              <div class="slicer-overlay-coords" id="slicerCoords">
+                X: 184.2mm &nbsp; Y: 184.2mm &nbsp; Z: 64.0mm
+              </div>
+              <div class="slicer-overlay-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline; vertical-align:middle; margin-right:2px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                Drag to rotate &bull; Scrub layers
+              </div>
+            </div>
+
+            <div class="slicer-footer">
+              <div class="layer-scrubber-row">
+                <span class="scrubber-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                  Layer: <span id="currentLayerDisplay">180</span>/240
+                </span>
+                <input type="range" min="1" max="240" value="180" class="layer-slider" id="layerSlider" aria-label="Layer Slicing Scrub Slider">
+              </div>
+
+              <div class="slicer-meta-pills">
+                <span class="meta-pill">Profile: <strong>PETG 0.16mm</strong></span>
+                <span class="meta-pill">Est. Time: <strong id="slicerTimeEst">4h 18m</strong></span>
+                <span class="meta-pill">Filament: <strong>78.4g</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Gallery Section -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag mono-tag">Crafted In Our Lab</span>
+          <h2 class="section-title">Precision Prints & Case Studies</h2>
+          <p class="section-desc">
+            Explore recent fabrications across mechanical assemblies, SLA character resin masters, aerospace prototypes, and generative art.
+          </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="gallery-nav" role="tablist">
+          <button class="filter-btn active" data-filter="all">All Prints (6)</button>
+          <button class="filter-btn" data-filter="mechanical">Mechanical & Tooling</button>
+          <button class="filter-btn" data-filter="miniatures">8K SLA Miniatures</button>
+          <button class="filter-btn" data-filter="prototypes">Functional Prototypes</button>
+          <button class="filter-btn" data-filter="art">Art & Parametric</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Item 1 -->
+          <article class="gallery-card" data-category="mechanical" data-id="1">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/mechanical-gear.svg" alt="High-Torque Cycloidal Drive 3D Print" loading="lazy">
+              <span class="gallery-badge">PETG-CF</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">High-Torque Cycloidal Drive</h3>
+              <p class="gallery-desc">Wear-resistant gearbox component printed in Carbon Fiber PETG for zero backlash robotic actuators.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Layer: <strong>0.12mm</strong></div>
+                <div class="spec-cell">Infill: <strong>60% Gyroid</strong></div>
+                <div class="spec-cell">Print Time: <strong>11h 45m</strong></div>
+                <div class="spec-cell">Tolerance: <strong>&plusmn;0.04mm</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2 -->
+          <article class="gallery-card" data-category="miniatures" data-id="2">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/miniature-dragon.svg" alt="8K Resin Archmage Figurine 3D Print" loading="lazy">
+              <span class="gallery-badge">8K UV Resin</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">8K Resin Archmage Figurine</h3>
+              <p class="gallery-desc">Ultra-high resolution tabletop display master with razor-sharp 28&micro;m pixel detail and zero layer striations.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Layer: <strong>0.03mm (30&micro;m)</strong></div>
+                <div class="spec-cell">Exposure: <strong>2.1s / layer</strong></div>
+                <div class="spec-cell">Wash & Cure: <strong>IPA + UV 8m</strong></div>
+                <div class="spec-cell">Finish: <strong>Ultra Smooth</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3 -->
+          <article class="gallery-card" data-category="prototypes" data-id="3">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/prototype-drone.svg" alt="Aerodynamic Drone Arm & Duct 3D Print" loading="lazy">
+              <span class="gallery-badge">PA12-CF Nylon</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">Aerodynamic Drone Arm & Duct</h3>
+              <p class="gallery-desc">Lightweight topological structure with integrated brass heat-set threaded inserts for high-stress FPV racing.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Layer: <strong>0.16mm</strong></div>
+                <div class="spec-cell">Heat Deflect: <strong>165&deg;C</strong></div>
+                <div class="spec-cell">Weight: <strong>34.2g</strong></div>
+                <div class="spec-cell">Reinforce: <strong>Chopped Carbon</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4 -->
+          <article class="gallery-card" data-category="art" data-id="4">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/art-voronoi-lamp.svg" alt="Parametric Voronoi Luminaire 3D Print" loading="lazy">
+              <span class="gallery-badge">Matte PLA</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">Parametric Voronoi Luminaire</h3>
+              <p class="gallery-desc">Generative algorithmic lampshade printed in continuous spiral vase mode for seamless light diffusion.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Layer: <strong>0.20mm</strong></div>
+                <div class="spec-cell">Perimeters: <strong>Single Wall 0.6mm</strong></div>
+                <div class="spec-cell">Print Time: <strong>6h 12m</strong></div>
+                <div class="spec-cell">Surface: <strong>Matte Obsidian</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5 -->
+          <article class="gallery-card" data-category="prototypes" data-id="5">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/prototype-enclosure.svg" alt="IP67 Sensor Enclosure with Gasket 3D Print" loading="lazy">
+              <span class="gallery-badge">PETG + TPU Gasket</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">IP67 Sensor Enclosure & Gasket</h3>
+              <p class="gallery-desc">Multi-material prototype with snap-fit lid, internal PCB standoffs, and customized flexible TPU seal.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Body: <strong>PETG Impact</strong></div>
+                <div class="spec-cell">Gasket: <strong>TPU 95A Flex</strong></div>
+                <div class="spec-cell">Rating: <strong>Weatherproof IP67</strong></div>
+                <div class="spec-cell">Fit: <strong>Snap & Fasten</strong></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6 -->
+          <article class="gallery-card" data-category="mechanical" data-id="6">
+            <div class="gallery-img-wrap">
+              <img src="assets/images/mechanical-bracket.svg" alt="Generative Topology Aerospace Bracket 3D Print" loading="lazy">
+              <span class="gallery-badge">ULTEM 9085</span>
+              <div class="gallery-inspect-overlay">
+                <span class="inspect-pill">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                  Quick Inspect
+                </span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3 class="gallery-title">Generative Topology Bracket</h3>
+              <p class="gallery-desc">FEA-optimized aerospace structural bracket engineered for 2.4kN shear loading with 62% mass reduction.</p>
+              <div class="gallery-specs">
+                <div class="spec-cell">Layer: <strong>0.16mm</strong></div>
+                <div class="spec-cell">Load Rating: <strong>2.4 kN Shear</strong></div>
+                <div class="spec-cell">Material: <strong>PEI / ULTEM</strong></div>
+                <div class="spec-cell">Optimization: <strong>FEA Generative</strong></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag cyan-tag mono-tag">Streamlined Pipeline</span>
+          <h2 class="section-title">From CAD File to Physical Reality</h2>
+          <p class="section-desc">
+            A frictionless 4-step workflow engineered for rapid iteration, strict tolerances, and dependable delivery.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <!-- Step 1 -->
+          <div class="process-card">
+            <div class="step-num-bubble">01</div>
+            <h3 class="process-title">Upload CAD / STL</h3>
+            <p class="process-desc">
+              Drop your `.stl`, `.obj`, `.step`, or `.3mf` files into our instant portal. Our system inspects geometry and volume instantly.
+            </p>
+            <ul class="process-features">
+              <li>Instant mesh validation</li>
+              <li>Watertightness check</li>
+              <li>Multi-file batch support</li>
+            </ul>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card">
+            <div class="step-num-bubble">02</div>
+            <h3 class="process-title">Choose Material & Specs</h3>
+            <p class="process-desc">
+              Select from high-impact engineering filaments or resin. Customize layer height, infill density, and surface treatment.
+            </p>
+            <ul class="process-features">
+              <li>12+ verified materials</li>
+              <li>Gyroid / Honeycomb infill</li>
+              <li>Immediate price estimate</li>
+            </ul>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card">
+            <div class="step-num-bubble">03</div>
+            <h3 class="process-title">Precision Fabrication</h3>
+            <p class="process-desc">
+              Your job is assigned to our calibrated industrial print farm with active chamber heating and continuous sensor monitoring.
+            </p>
+            <ul class="process-features">
+              <li>Calibrated ±0.05mm axes</li>
+              <li>Multi-stage post-cure</li>
+              <li>Live progress status</li>
+            </ul>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-card">
+            <div class="step-num-bubble">04</div>
+            <h3 class="process-title">Inspection & Dispatch</h3>
+            <p class="process-desc">
+              Every part undergoes micrometer dimensional inspection before padded anti-static packaging or immediate local pickup.
+            </p>
+            <ul class="process-features">
+              <li>Dimensional caliper audit</li>
+              <li>Pickup SMS / courier tracker</li>
+              <li>Guaranteed reprint policy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upload / Instant Order & Quote Form Section -->
+    <section class="section order-section" id="order">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag mono-tag">Instant Calculation</span>
+          <h2 class="section-title">Upload Design & Calculate Quote</h2>
+          <p class="section-desc">
+            Configure your technical parameters and get an instant real-time price estimate with guaranteed production lead times.
+          </p>
+        </div>
+
+        <div class="order-wrapper">
+          <!-- Left: Configuration Form -->
+          <div class="order-form-panel">
+            <form id="orderForm" onsubmit="return false;">
+              <!-- Drag & Drop Zone -->
+              <div class="dropzone-container">
+                <input type="file" id="fileInput" accept=".stl,.obj,.step,.3mf" style="display: none;">
+                <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload 3D File">
+                  <div class="dropzone-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  </div>
+                  <div class="dropzone-title">Drop your STL / OBJ / STEP file here</div>
+                  <div class="dropzone-sub">or click to browse from your computer (Max 120MB)</div>
+                  
+                  <!-- Quick Preset Samples for Instant Testing -->
+                  <div class="sample-files-row" onclick="event.stopPropagation();">
+                    <span class="mono-tag" style="color: var(--text-muted);">Quick Sample Meshes:</span>
+                    <button type="button" class="sample-btn" data-mesh="gear">⚙️ Planetary Gear</button>
+                    <button type="button" class="sample-btn" data-mesh="drone">🛸 Drone Arm</button>
+                    <button type="button" class="sample-btn" data-mesh="vase">🏺 Voronoi Vase</button>
+                  </div>
+                </div>
+
+                <!-- Active File Banner -->
+                <div class="active-file-banner" id="activeFileBanner">
+                  <div class="file-info-col">
+                    <div class="file-status-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div>
+                      <div class="file-name" id="displayFileName">Planetary_Gear_v2.stl</div>
+                      <div class="file-stats-summary" id="displayFileStats">Volume: 42.6 cm³ &bull; Vertices: 18,420 &bull; Est. 54g</div>
+                    </div>
+                  </div>
+                  <button type="button" class="file-remove-btn" id="btnRemoveFile" title="Remove File">&times;</button>
+                </div>
+              </div>
+
+              <!-- Parameter Selection Grid -->
+              <div class="form-grid-2">
+                <!-- Material Selector -->
+                <div class="form-group">
+                  <label class="form-label" for="materialSelect">
+                    Material Type
+                    <span class="form-label-desc">Engineering Grade</span>
+                  </label>
+                  <select class="form-select" id="materialSelect">
+                    <option value="pla" data-rate="6.50" data-density="1.24">PLA+ Matte / Standard (₹6.50/g)</option>
+                    <option value="petg" data-rate="9.50" data-density="1.27" selected>PETG Tough &amp; Chemical Resistant (₹9.50/g)</option>
+                    <option value="abs" data-rate="11.50" data-density="1.08">ABS / ASA UV Resistant (₹11.50/g)</option>
+                    <option value="pacf" data-rate="24.00" data-density="1.38">Carbon Fiber PA12-CF (₹24.00/g)</option>
+                    <option value="tpu" data-rate="15.00" data-density="1.21">TPU 95A Flexible (₹15.00/g)</option>
+                    <option value="sla_std" data-rate="18.00" data-density="1.15">8K Precision SLA Resin (₹18.00/g)</option>
+                    <option value="sla_tough" data-rate="26.00" data-density="1.18">Tough Engineering Resin (₹26.00/g)</option>
+                  </select>
+                </div>
+
+                <!-- Layer Resolution -->
+                <div class="form-group">
+                  <label class="form-label" for="layerSelect">
+                    Layer Resolution
+                    <span class="form-label-desc">Surface Detail</span>
+                  </label>
+                  <select class="form-select" id="layerSelect">
+                    <option value="0.08" data-mult="1.45">0.08mm Ultra-Fine (Maximum Quality)</option>
+                    <option value="0.16" data-mult="1.0" selected>0.16mm Optimal Balance (Recommended)</option>
+                    <option value="0.28" data-mult="0.8">0.28mm Rapid Prototyping (Draft Speed)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Infill Density Slider -->
+              <div class="form-group">
+                <div class="range-container">
+                  <div class="range-header">
+                    <span>Internal Infill Density</span>
+                    <span><strong id="infillValDisplay" style="color: var(--accent-orange);">40%</strong> (Gyroid Matrix)</span>
+                  </div>
+                  <input type="range" min="10" max="100" step="5" value="40" class="range-slider-styled" id="infillSlider" aria-label="Infill density slider">
+                </div>
+              </div>
+
+              <!-- Color Selection Swatches -->
+              <div class="form-group">
+                <label class="form-label">Filament / Resin Color</label>
+                <div class="color-swatches-grid" id="colorSwatches">
+                  <button type="button" class="color-swatch-btn active" data-color="Stealth Matte Black" style="background: #15181e;" title="Stealth Matte Black"></button>
+                  <button type="button" class="color-swatch-btn" data-color="Industrial Grey" style="background: #505c6e;" title="Industrial Grey"></button>
+                  <button type="button" class="color-swatch-btn" data-color="Electric Orange" style="background: #ff6b1a;" title="Electric Orange"></button>
+                  <button type="button" class="color-swatch-btn" data-color="Signal White" style="background: #e6ebf2;" title="Signal White"></button>
+                  <button type="button" class="color-swatch-btn" data-color="Cyber Cyan" style="background: #00e5ff;" title="Cyber Cyan"></button>
+                  <button type="button" class="color-swatch-btn" data-color="Translucent Clear" style="background: rgba(220, 240, 255, 0.4); border: 1px solid rgba(255,255,255,0.4);" title="Translucent Clear"></button>
+                </div>
+                <div class="mono-tag" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">
+                  Selected: <span id="selectedColorDisplay" style="color: var(--text-primary); font-weight: 600;">Stealth Matte Black</span>
+                </div>
+              </div>
+
+              <!-- Quantity & Post Processing -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="qtyInput">Quantity</label>
+                  <input type="number" class="form-input" id="qtyInput" min="1" max="500" value="1">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="finishSelect">Post-Processing</label>
+                  <select class="form-select" id="finishSelect">
+                    <option value="raw" data-cost="0">Clean Support Removal (Included)</option>
+                    <option value="sanded" data-cost="250">Sanded &amp; Deburred (+₹250.00)</option>
+                    <option value="vapor" data-cost="450">Chemical Vapor Smoothed (+₹450.00)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Contact Information -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="userName">Your Name *</label>
+                  <input type="text" class="form-input" id="userName" placeholder="e.g. Alex Morgan" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="userEmail">Email Address *</label>
+                  <input type="email" class="form-input" id="userEmail" placeholder="alex@company.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="userNotes">Special Requirements / Notes (Optional)</label>
+                <textarea class="form-textarea" id="userNotes" placeholder="Specify heat-set insert sizes, thread tapping, or specific critical tolerance dimensions..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" class="checkbox-input" id="rushExpedited">
+                  <span class="checkbox-custom"></span>
+                  <span><strong>Rush Priority Dispatch (24h)</strong> &mdash; Move to the front of the print queue (+25%)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitOrder" style="width: 100%; margin-top: 1rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Request Official Quote / Place Order
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Dynamic Pricing Breakdown Sidebar -->
+          <aside class="quote-summary-panel">
+            <div class="quote-summary-title">
+              <h3>Live Quote Estimate</h3>
+              <span class="mono-tag" style="color: var(--accent-orange);">INSTANT</span>
+            </div>
+
+            <div class="quote-specs-box">
+              <div class="specs-row">
+                <span>Selected Mesh:</span>
+                <span id="summaryMeshName">Planetary_Gear.stl</span>
+              </div>
+              <div class="specs-row">
+                <span>Bounding Box:</span>
+                <span id="summaryBounds">65 x 65 x 24 mm</span>
+              </div>
+              <div class="specs-row">
+                <span>Calculated Part Weight:</span>
+                <span id="summaryWeight">54.2 grams</span>
+              </div>
+              <div class="specs-row">
+                <span>Machine Print Duration:</span>
+                <span id="summaryDuration">~4 hrs 35 mins</span>
+              </div>
+            </div>
+
+            <div class="quote-breakdown-list">
+              <div class="breakdown-row">
+                <span>Base Material (<span id="calcMatLabel">PETG</span>):</span>
+                <strong id="priceMat">₹514.90</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Machine Time &amp; Setup:</span>
+                <strong id="priceMachine">₹450.00</strong>
+              </div>
+              <div class="breakdown-row">
+                <span>Post-Processing &amp; QC:</span>
+                <strong id="priceFinish">₹0.00</strong>
+              </div>
+              <div class="breakdown-row" id="rushFeeRow" style="display: none; color: var(--accent-orange);">
+                <span>Rush 24h Queue:</span>
+                <strong id="priceRush">₹241.22</strong>
+              </div>
+              <div class="breakdown-row total-row">
+                <span>Total Estimate:</span>
+                <strong id="priceTotal">₹964.90</strong>
+              </div>
+            </div>
+
+            <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+              *Final quote verified upon manual engineering review of STL geometry. Volume discounts applied automatically on batches &ge; 5 parts.
+            </p>
+
+            <div style="background: rgba(0,229,255,0.06); border: 1px solid var(--border-cyan); border-radius: var(--radius-md); padding: 0.85rem; font-size: 0.78rem; color: var(--accent-cyan); display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Includes 100% reprint guarantee for dimensional out-of-spec parts.</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Materials Matrix Section -->
+    <section class="section" id="materials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag mono-tag">Material Properties</span>
+          <h2 class="section-title">Engineering Filaments & Resins</h2>
+          <p class="section-desc">
+            We stock strictly certified industrial grade polymers calibrated for high impact resistance, temperature durability, and aesthetic clarity.
+          </p>
+        </div>
+
+        <div class="materials-grid">
+          <!-- Card 1: Standard FDM -->
+          <div class="material-card">
+            <div class="material-header">
+              <div class="material-tier-tag">TIER 01 / RAPID PROTOTYPING</div>
+              <h3 class="material-title">Prototyping Polymers</h3>
+              <p class="material-desc">Ideal for visual validation, form testing, cosmetic mockups, and low-stress brackets.</p>
+            </div>
+
+            <div class="material-specs-list">
+              <div class="spec-line">
+                <span>Tensile Strength</span>
+                <span>45 – 55 MPa</span>
+              </div>
+              <div class="spec-line">
+                <span>Max Heat Deflection</span>
+                <span>60&deg;C &ndash; 75&deg;C</span>
+              </div>
+              <div class="spec-line">
+                <span>Tolerance Capability</span>
+                <span>&plusmn;0.12 mm</span>
+              </div>
+              <div class="spec-line">
+                <span>Surface Finish</span>
+                <span>Semi-Matte / Satin</span>
+              </div>
+            </div>
+
+            <div class="material-materials-tags">
+              <span class="mat-tag">PLA+ Matte</span>
+              <span class="mat-tag">PETG Tough</span>
+              <span class="mat-tag">High-Speed PLA</span>
+            </div>
+
+            <a href="#order" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: auto;">Select Prototyping</a>
+          </div>
+
+          <!-- Card 2: Engineering Grade (Featured) -->
+          <div class="material-card featured">
+            <span class="featured-badge">Most Popular</span>
+            <div class="material-header">
+              <div class="material-tier-tag">TIER 02 / HIGH PERFORMANCE</div>
+              <h3 class="material-title">Engineering & Carbon</h3>
+              <p class="material-desc">Continuous carbon-reinforced and UV-stable polymers for end-use functional assemblies.</p>
+            </div>
+
+            <div class="material-specs-list">
+              <div class="spec-line">
+                <span>Tensile Strength</span>
+                <span>85 – 115 MPa</span>
+              </div>
+              <div class="spec-line">
+                <span>Max Heat Deflection</span>
+                <span>120&deg;C &ndash; 165&deg;C</span>
+              </div>
+              <div class="spec-line">
+                <span>Tolerance Capability</span>
+                <span>&plusmn;0.05 mm</span>
+              </div>
+              <div class="spec-line">
+                <span>Impact Resistance</span>
+                <span>Very High</span>
+              </div>
+            </div>
+
+            <div class="material-materials-tags">
+              <span class="mat-tag">PA12-CF Carbon</span>
+              <span class="mat-tag">ABS / ASA Outdoor</span>
+              <span class="mat-tag">TPU 95A Elastomer</span>
+              <span class="mat-tag">PC-Blend</span>
+            </div>
+
+            <a href="#order" class="btn btn-primary btn-sm" style="width: 100%; margin-top: auto;">Select Engineering</a>
+          </div>
+
+          <!-- Card 3: 8K SLA Resin -->
+          <div class="material-card">
+            <div class="material-header">
+              <div class="material-tier-tag">TIER 03 / ULTRA PRECISION</div>
+              <h3 class="material-title">8K Photopolymer Resin</h3>
+              <p class="material-desc">Micron-level SLA curing for jewelry casting masters, dental study models, and miniatures.</p>
+            </div>
+
+            <div class="material-specs-list">
+              <div class="spec-line">
+                <span>XY Pixel Resolution</span>
+                <span>28 &micro;m (0.028mm)</span>
+              </div>
+              <div class="spec-line">
+                <span>Min Feature Size</span>
+                <span>0.10 mm</span>
+              </div>
+              <div class="spec-line">
+                <span>Layer Capability</span>
+                <span>0.025 &ndash; 0.05 mm</span>
+              </div>
+              <div class="spec-line">
+                <span>Surface Finish</span>
+                <span>Glass-Smooth</span>
+              </div>
+            </div>
+
+            <div class="material-materials-tags">
+              <span class="mat-tag">8K Precision Resin</span>
+              <span class="mat-tag">Tough Engineering Resin</span>
+              <span class="mat-tag">Castable Wax</span>
+            </div>
+
+            <a href="#order" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: auto;">Select SLA Resin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workshop Location & FAQ Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag cyan-tag mono-tag">Local Lab &amp; Support</span>
+          <h2 class="section-title">Workshop Location &amp; Contact</h2>
+          <p class="section-desc">
+            Visit our fabrication studio for sample touch-and-feel consultations, material samples, or local order pickup.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Location Map Preview & Info -->
+          <div class="location-card">
+            <div class="map-embed-wrapper" aria-label="Workshop Map Location">
+              <svg viewBox="0 0 500 280" class="map-svg-preview" xmlns="http://www.w3.org/2000/svg">
+                <rect width="500" height="280" fill="#0c0e14"/>
+                <!-- Map stylized roads -->
+                <path d="M 0,90 Q 180,110 320,80 T 500,60" stroke="#1c2330" stroke-width="12" fill="none"/>
+                <path d="M 120,0 L 140,280" stroke="#1c2330" stroke-width="10" fill="none"/>
+                <path d="M 280,0 L 260,280" stroke="#222b3a" stroke-width="14" fill="none"/>
+                <path d="M 0,210 L 500,190" stroke="#1c2330" stroke-width="8" fill="none"/>
+                <!-- Building footprints -->
+                <rect x="160" y="30" width="70" height="50" rx="3" fill="#141822" stroke="#2a3344" stroke-width="1"/>
+                <rect x="300" y="110" width="80" height="60" rx="3" fill="#141822" stroke="#2a3344" stroke-width="1"/>
+                <rect x="170" y="130" width="60" height="40" rx="3" fill="#141822" stroke="#2a3344" stroke-width="1"/>
+                <!-- Pulse pin -->
+                <circle cx="270" cy="140" r="30" fill="rgba(255,107,26,0.1)"/>
+                <circle cx="270" cy="140" r="8" fill="#FF6B1A"/>
+              </svg>
+              <div class="map-pin-overlay">
+                <div class="pin-bubble">3D WIZARD WORKSHOP</div>
+                <div class="pin-beacon"></div>
+              </div>
+            </div>
+
+            <div class="location-info-body">
+              <div class="contact-meta-row">
+                <div class="contact-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Studio &amp; Fabrication Bay</h4>
+                  <p>442 Maker Lane, Industrial Tech Quarter, Suite 104</p>
+                  <button type="button" class="copy-btn" data-copy="442 Maker Lane, Suite 104, Tech Quarter">Copy Address</button>
+                </div>
+              </div>
+
+              <div class="contact-meta-row">
+                <div class="contact-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Operating &amp; Pickup Hours</h4>
+                  <p>Monday &ndash; Friday: <strong>8:30 AM &ndash; 6:30 PM</strong><br/>Saturday: <strong>10:00 AM &ndash; 4:00 PM</strong> (By Appointment)</p>
+                </div>
+              </div>
+
+              <div class="contact-meta-row">
+                <div class="contact-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Direct Contact</h4>
+                  <p>Email: <a href="mailto:build@3dwizard.io" style="color: var(--accent-orange);">build@3dwizard.io</a> &bull; Phone: (555) 384-9493</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div class="faq-list">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Frequently Asked Questions</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Common technical questions regarding file prep, tolerances, and turnarounds.
+            </p>
+
+            <div class="faq-item active">
+              <button class="faq-question">
+                What file formats do you accept for quotes?
+                <span class="faq-icon">&plus;</span>
+              </button>
+              <div class="faq-answer">
+                We accept STL (`.stl`), OBJ (`.obj`), STEP (`.step`/`.stp`), and 3MF (`.3mf`). For engineering assemblies with precise curves, native STEP files are preferred to avoid polygon chordal error.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                What tolerances can you reliably achieve?
+                <span class="faq-icon">&plus;</span>
+              </button>
+              <div class="faq-answer">
+                For standard FDM (PETG/PLA), we routinely maintain &plusmn;0.10mm. On tuned Carbon Fiber PA-CF and calibrated 8K SLA resin printers, we achieve tight tolerances down to &plusmn;0.04mm.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How fast is the turnaround for rush orders?
+                <span class="faq-icon">&plus;</span>
+              </button>
+              <div class="faq-answer">
+                Standard lead time is 48 hours. By selecting the Rush Priority option, we slot your job into our continuous 24-hour overnight farm queue for same-day or next-morning dispatch.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Can you add brass threaded heat-set inserts?
+                <span class="faq-icon">&plus;</span>
+              </button>
+              <div class="faq-answer">
+                Yes! We maintain an inventory of M2, M2.5, M3, M4, and M5 brass ultrasonic/heat-set inserts for durable mechanical bolting. Simply mention required sizes in the notes field.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-icon">
+              <div class="logo-cube"></div>
+              <div class="logo-dot"></div>
+            </div>
+            <div class="brand-text">
+              <span>3D</span><span class="brand-accent">WIZARD</span>
+            </div>
+          </div>
+          <p>
+            Boutique custom additive fabrication lab. Precision FDM, SLA, and engineering prototypes delivered with maker craftsmanship and micron precision.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#materials">FDM Prototyping</a></li>
+            <li><a href="#materials">Carbon Fiber PA12-CF</a></li>
+            <li><a href="#materials">8K Resin Miniatures</a></li>
+            <li><a href="#materials">Vapor Smoothing &amp; Inserts</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#gallery">Portfolio Works</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#order">Instant Quote Calculator</a></li>
+            <li><a href="#contact">Workshop Location</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Lab Specs</h5>
+          <ul>
+            <li><span class="mono-tag" style="color: var(--accent-cyan);">MAX VOLUME</span> 350x350x400mm</li>
+            <li><span class="mono-tag" style="color: var(--accent-cyan);">RESIN PIXEL</span> 28 &micro;m</li>
+            <li><span class="mono-tag" style="color: var(--accent-cyan);">HOTEND TEMP</span> Up to 350&deg;C</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 3D Wizard Fabrication Lab. All rights reserved.</div>
+        <div class="mono-tag">DESIGNED WITH MICRON PRECISION</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick Inspect Modal -->
+  <div class="modal-backdrop" id="inspectModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div style="padding: 2rem;">
+        <div id="modalBody">
+          <!-- Dynamic Content Populated by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="modal-backdrop" id="orderSuccessModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="successModalCloseBtn" aria-label="Close modal">&times;</button>
+      <div style="padding: 2.5rem; text-align: center;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(0,255,136,0.1); border: 2px solid #00ff88; color: #00ff88; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.75rem;">
+          ✓
+        </div>
+        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Job Ticket Generated</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+          Your 3D print order and geometry parameters have been logged to our lab queue.
+        </p>
+
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 1.25rem; font-family: var(--font-mono); font-size: 0.82rem; text-align: left; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+            <span style="color: var(--text-muted);">Ticket ID:</span>
+            <strong id="ticketNumberDisplay" style="color: var(--accent-orange);">#3DW-8924</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+            <span style="color: var(--text-muted);">Client:</span>
+            <span id="ticketClientDisplay">Alex Morgan</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+            <span style="color: var(--text-muted);">Estimated Lead Time:</span>
+            <span id="ticketLeadTimeDisplay" style="color: var(--accent-cyan);">24-48 Hours</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">Estimated Total:</span>
+            <strong id="ticketTotalDisplay" style="color: #fff;">₹964.90</strong>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btnDoneOrder" style="width: 100%;">
+          Back to Lab Overview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

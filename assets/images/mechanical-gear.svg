@@ -1,0 +1,51 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="portfolio-svg">
+  <defs>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242B35" />
+      <stop offset="50%" stop-color="#181D24" />
+      <stop offset="100%" stop-color="#0F1217" />
+    </linearGradient>
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B1A" />
+      <stop offset="100%" stop-color="#FF9E42" />
+    </linearGradient>
+  </defs>
+  <!-- Background Grid -->
+  <rect width="400" height="300" fill="#0D1015"/>
+  <circle cx="200" cy="150" r="110" fill="none" stroke="rgba(255,107,26,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="200" cy="150" r="130" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  
+  <!-- Sliced Layer Stack Effect -->
+  <g transform="translate(0, 15)">
+    <!-- Base Layer Shadow -->
+    <ellipse cx="200" cy="180" rx="85" ry="35" fill="rgba(0,0,0,0.6)"/>
+    
+    <!-- 3D Layer Slices for Gear -->
+    <!-- Layer 1 -->
+    <path d="M 200,90 L 225,95 L 245,80 L 260,98 L 285,95 L 290,118 L 310,128 L 300,150 L 312,172 L 295,188 L 295,210 L 270,215 L 255,230 L 230,225 L 210,235 L 190,225 L 165,230 L 150,215 L 125,210 L 125,188 L 108,172 L 120,150 L 110,128 L 130,118 L 135,95 L 160,98 L 175,80 L 195,95 Z" fill="url(#gearGrad)" stroke="#3A4452" stroke-width="1.5"/>
+    
+    <!-- Layer Lines lines on gear side -->
+    <path d="M 120,150 Q 200,170 300,150" fill="none" stroke="rgba(255,107,26,0.4)" stroke-width="1"/>
+    <path d="M 115,160 Q 200,180 305,160" fill="none" stroke="rgba(255,107,26,0.25)" stroke-width="1"/>
+    <path d="M 110,170 Q 200,190 310,170" fill="none" stroke="rgba(255,107,26,0.2)" stroke-width="1"/>
+    
+    <!-- Inner Core & Bearings -->
+    <circle cx="200" cy="150" r="42" fill="#12151B" stroke="url(#orangeGlow)" stroke-width="2"/>
+    <circle cx="200" cy="150" r="28" fill="#090B0E" stroke="#3A4452" stroke-width="1.5"/>
+    <circle cx="200" cy="150" r="14" fill="#FF6B1A" fill-opacity="0.2" stroke="#FF6B1A" stroke-width="1"/>
+    
+    <!-- Keyway notch -->
+    <rect x="196" y="128" width="8" height="12" fill="#090B0E" stroke="#3A4452" stroke-width="1"/>
+    
+    <!-- Weight reduction pockets with gyroid infill hints -->
+    <circle cx="165" cy="130" r="10" fill="#171A21" stroke="rgba(255,107,26,0.5)" stroke-width="1.2"/>
+    <circle cx="235" cy="130" r="10" fill="#171A21" stroke="rgba(255,107,26,0.5)" stroke-width="1.2"/>
+    <circle cx="165" cy="170" r="10" fill="#171A21" stroke="rgba(255,107,26,0.5)" stroke-width="1.2"/>
+    <circle cx="235" cy="170" r="10" fill="#171A21" stroke="rgba(255,107,26,0.5)" stroke-width="1.2"/>
+  </g>
+  
+  <!-- Technical Annotations -->
+  <text x="25" y="40" fill="#6A778B" font-family="monospace" font-size="11">CF-PETG / TOLERANCE ±0.04mm</text>
+  <line x1="25" y1="46" x2="190" y2="46" stroke="#FF6B1A" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="320" y="275" fill="#00E5FF" font-family="monospace" font-size="11" text-anchor="end">LAYER: 0.12mm</text>
+</svg>

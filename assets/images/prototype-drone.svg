@@ -1,0 +1,41 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="portfolio-svg">
+  <defs>
+    <linearGradient id="cfGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1E232B" />
+      <stop offset="100%" stop-color="#101317" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#0B0D11"/>
+  
+  <!-- Vector grid lines -->
+  <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="200" y1="30" x2="200" y2="270" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  
+  <!-- Drone Arm Assembly Isometric -->
+  <g transform="translate(10, 0)">
+    <!-- Motor Duct Ring -->
+    <ellipse cx="260" cy="140" rx="75" ry="50" fill="url(#cfGrad)" stroke="#FF6B1A" stroke-width="2"/>
+    <ellipse cx="260" cy="140" rx="52" ry="34" fill="#0A0C0E" stroke="#3A4554" stroke-width="1.5"/>
+    
+    <!-- Motor Mount Stators (Generative Truss) -->
+    <line x1="260" y1="140" x2="210" y2="120" stroke="#FF6B1A" stroke-width="2.5"/>
+    <line x1="260" y1="140" x2="310" y2="120" stroke="#FF6B1A" stroke-width="2.5"/>
+    <line x1="260" y1="140" x2="260" y2="174" stroke="#FF6B1A" stroke-width="2.5"/>
+    <circle cx="260" cy="140" r="14" fill="#1C222B" stroke="#00E5FF" stroke-width="2"/>
+    
+    <!-- Aerodynamic Spar Body extending to chassis -->
+    <path d="M 80,165 L 195,145 L 205,160 L 85,185 Z" fill="#1A1F26" stroke="#4B5868" stroke-width="1.5"/>
+    <path d="M 80,165 L 120,130 L 200,125 L 195,145 Z" fill="#242B35" stroke="#FF6B1A" stroke-width="1.2"/>
+    
+    <!-- Lightweight topology cutouts -->
+    <polygon points="105,155 125,142 145,152 125,165" fill="#0B0D11" stroke="rgba(255,107,26,0.6)" stroke-width="1"/>
+    <polygon points="150,150 170,138 185,148 165,160" fill="#0B0D11" stroke="rgba(255,107,26,0.6)" stroke-width="1"/>
+    
+    <!-- M3 Brass Thread Insert Callout -->
+    <circle cx="75" cy="175" r="5" fill="#FFC72C" stroke="#B8860B" stroke-width="1.5"/>
+  </g>
+  
+  <text x="25" y="40" fill="#6A778B" font-family="monospace" font-size="11">PA12-CF / HEAT DEFLECTION 165°C</text>
+  <line x1="25" y1="46" x2="210" y2="46" stroke="#FF6B1A" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="375" y="275" fill="#00E5FF" font-family="monospace" font-size="11" text-anchor="end">WEIGHT: 34.2g</text>
+</svg>
